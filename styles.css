@@ -6,11 +6,11 @@
 :root {
   /* Farben */
   --paper:      #F6F4F0;
-  --paper-alt:  #EDE9E3;
+  --paper-alt:  #e3ede8;
   --ink:        #121212;
   --ink-soft:   #5B5854;
-  --wood:       #B4682A;
-  --line:       rgba(18, 18, 18, .12);
+  --wood:       #a8c200;
+  --line:       rgba(18, 18, 18, .25);
 
   /* Auf hellem Grund verwendete Rollen (in .section--dark überschrieben) */
   --bg:          var(--paper);
@@ -188,13 +188,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: var(--btn-fg);
   border-color: var(--btn-bg);
 }
-.btn--primary:hover { background: var(--wood); border-color: var(--wood); color: #fff; }
+.btn--primary:hover { background: var(--wood); border-color: var(--wood); }
 
 .btn--ghost {
   color: var(--fg);
   border-color: var(--rule);
 }
-.btn--ghost:hover { border-color: var(--fg); }
+.btn--ghost:hover { border-color: var(--wood); }
 
 /* ── Kopfzeile ───────────────────────────────────────────────────────────── */
 
@@ -330,8 +330,8 @@ ul { margin: 0; padding: 0; list-style: none; }
    Der dünnere Strich (1.5 statt 2) passt zum Schriftbild. */
 .split__icon {
   display: block;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 3rem;
+  height: 3rem;
   margin-bottom: 1rem;
   color: var(--wood);
 }
@@ -435,7 +435,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .contact__details {
   width: 100%;
-  border-top: 2px solid var(--rule);
+  border-top: 1px solid var(--rule);
   padding-top: 1.75rem;
 }
 
@@ -452,7 +452,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   gap: .35rem;
   padding-block: 1rem;
-  border-bottom: 2px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 .contact__row:last-child { border-bottom: 0; }
 
