@@ -340,7 +340,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .cards {
   display: grid;
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+  gap: clamp(3rem, 2.5vw, 2rem);
 }
 
 .cards--services { grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); }
@@ -359,11 +359,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-top: 1.15rem;
 }
 .cards--services .card h3 { margin-bottom: .5rem; }
-.cards--services .card p {
+.cards--services .card p,
+.card__list {
   color: var(--fg-soft);
   font-size: .9375rem;
   line-height: 1.55;
 }
+.card__list {
+  list-style: disc;
+  padding-left: 1.15rem;
+}
+.card__list li + li { margin-top: .3em; }
+.card__list li::marker { color: var(--wood); }
 
 .card--project h3 { margin-bottom: .35rem; }
 .card--project .meta { margin-bottom: .65rem; }

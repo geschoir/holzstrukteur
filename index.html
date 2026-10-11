@@ -65,40 +65,6 @@
     <div class="wrap hero__inner">
 
       <figure class="keyvisual" aria-hidden="true">
-        <!--
-          Beide Dateien enthalten den Clip als Palindrom: 7,8 s vorwärts (die
-          erste Hälfte des Originals), dann dieselben Bilder rückwärts, ohne
-          die Wendebilder doppelt. Dadurch genügt das normale loop-Attribut
-          für einen nahtlosen Vor-Zurück-Lauf, ganz ohne JavaScript.
-
-          WebM/VP9 steht zuerst und wird von allen aktuellen Browsern genommen;
-          das MP4 bedient ältere Safari-Versionen. Beide entstehen direkt aus
-          dem 4K-Master 14558333_2160_3840_29fps.mp4, nicht aus einer bereits
-          komprimierten Zwischenstufe — sonst verlieren VP9 und AV1 ihren
-          Vorsprung, weil sie Bits für die Artefakte der Vorstufe ausgeben.
-
-            M=14558333_2160_3840_29fps.mp4
-            FC="[0:v]crop=2160:2646:0:597,scale=640:784,fps=25,\
-                trim=start_frame=0:end_frame=196,setpts=PTS-STARTPTS,split[a][b];\
-                [b]reverse,trim=start_frame=1:end_frame=195,\
-                setpts=PTS-STARTPTS[r];[a][r]concat=n=2:v=1[v]"
-
-            ffmpeg -i $M -filter_complex "$FC" -map "[v]" -an \
-              -c:v libx264 -preset veryslow -crf 30 -pix_fmt yuv420p \
-              -movflags +faststart keyvisual.mp4
-
-            ffmpeg -i $M -filter_complex "$FC" -map "[v]" -an -c:v libvpx-vp9 \
-              -b:v 1100k -pass 1 -row-mt 1 -deadline good -cpu-used 4 \
-              -auto-alt-ref 1 -lag-in-frames 25 -g 240 -f null /dev/null
-            ffmpeg -i $M -filter_complex "$FC" -map "[v]" -an -c:v libvpx-vp9 \
-              -b:v 1100k -pass 2 -row-mt 1 -deadline good -cpu-used 0 \
-              -auto-alt-ref 1 -lag-in-frames 25 -g 240 -pix_fmt yuv420p \
-              keyvisual.webm
-
-          end_frame=196 ist die halbe Cliplänge (393 Bilder bei 25 fps); die
-          Rückwärtshälfte lässt Anfang und Ende weg, sonst steht das Bild am
-          Wendepunkt und am Loop-Sprung je zwei Bilder lang still.
-        -->
         <video class="keyvisual__media" autoplay muted loop playsinline
                preload="metadata" width="640" height="784"
                poster="assets/keyvisual-poster.jpg">
@@ -227,23 +193,82 @@
       </div>
 
       <ul class="cards cards--services">
-        <li class="card">
-          <h3>Aufmaß &amp; Bestandsvermessung</h3>
-          <p>Maßhaltige Erfassung von Grundstück, Bestand und Fundamenten als verlässliche Planungsgrundlage.</p>
+        <!-- <li class="card">
+          <h3>Vermessung</h3>
+          <p>Geländeaufnahme von Grundstück, maßhaltige Erfassung von Bestand und Fundamenten als verlässliche Planungsgrundlage.</p>
         </li>
         <li class="card">
-          <h3>3D-Aufnahme &amp; Punktwolke</h3>
-          <p>Digitale Bestandsaufnahme für Umbau, Aufstockung und Anschlüsse an bestehende Gebäude.</p>
+          <h3>Tragwerksplanung im Holzbau</h3>
+          <p></p>
         </li>
         <li class="card">
-          <h3>Werk- &amp; Ausführungsplanung</h3>
+          <h3>Werkplanung</h3>
           <p>Vollständige Holzbaukonstruktion mit Aufbauten, Details und Bauteilkatalog — planungsreif für die Ausführung.</p>
         </li>
         <li class="card">
-          <h3>Absteckung auf der Baustelle</h3>
+          <h3>Bauabsteckung</h3>
           <p>Achsen, Höhen und Ankerlagen vor Montagebeginn eingemessen und kontrolliert.</p>
+        </li> -->
+        <li class="card">
+          <h3>Geländeaufmaß</h3>
+          <ul class="card__list">
+            <li>Tachymetrische Geländeaufnahme im geplanten Baufeld</li>
+            <li>Höhenlinien und 3D-Punktewolke</li>
+            <li>Georeferenz auf Basis der amtlichen Flurkarte (UTM 32, DHHN 2016)</li>
+            <li>Aufnahme der Nachbarbebauung (§34)</li>
+            <li>Aufnahme des Baumbestandes</li>
+            <li>Aufnahme besonderer Punkte (incl. Straßennivau, Kanal und Spartenanschlüsse) </li>
+            <li>Planerstellung (DWG/DXF und PDF Datenübergabe)</li>
+
+          </ul>
         </li>
-        
+        <li class="card">
+          <h3>Vermessung für das Bauen im Bestand</h3>
+          <!-- <h5>Je nach Anforderung:</h5> -->
+          <ul class="card__list">
+            <li>Ermittlung der bestehenden Tragstruktur</li>
+            <li>Aufnahme der Geschoßhöhen</li>
+            <li>Bestandsdokumentation</li>
+            <li>Erstellung von Grundrissen, Schnitten und Ansichten</li>
+            <li>Übergabe als PDF, Druck und im CAD-Format</li>
+          </ul>
+        </li>
+        <li class="card">
+          <h3>Tragwerksplanung im Holzbau</h3>
+          <!-- <h5>Je nach Anforderung:</h5> -->
+          <ul class="card__list">
+            <!-- Tragwerkskonzept / Vorstatik -->
+            <li>Erarbeiten eines Tragkonzepts auf Grundlage der 
+            Baueingabepläne im Maßstab 1:100</li>
+            <!-- <li>skizzenhafte Aufbereitung und Präsentation</li> -->
+            <li>Vorbemessung auf Grundlage des 
+            erarbeiteten und besprochenen Tragkonzeptes</li>
+            <!-- Tragwerksplanung Holzbau  -->
+            <li>Statische Berechnung der  Bauteile</li>
+            <li>Standsicherheitsnachweis für den Holzbau </li>
+            <li>Erstellung der Positionspläne auf Grundlage der Werkplanung im Maßstab 1:50</li>
+          </ul>
+        </li>
+        <li class="card">
+          <h3>Werkplanung</h3>
+          <!-- <h5>Je nach Anforderung:</h5> -->
+          <ul class="card__list">
+            <!-- Werkplanung Holzbau inkl. Planbesprechung mit Bauherr  -->
+<li>Erarbeiten der Werkplanung auf Grundlage der Baueingabepläne</li> 
+<li>Darstellung von Grundrissen, Schnitten und Ansichten im Maßstab 1:50</li> 
+<li>Detailplanung nach Vorgabe und in Abstimmung mit dem Auftraggeber</li>
+          </ul>
+        </li>
+        <li class="card">
+          <h3>Absteckung</h3>
+          <ul class="card__list">
+            <li>Grobabsteckung des geplanten Gebäudes auf dem Grundstück</li> 
+            <li>Einmessen der Gebäudeecken auf Basis der 
+            Genehmigungsplanung</li>
+            <li>Markierung mittels Holzpflöcken</li> 
+            <li>Erstellung eines Schnurgerüsts</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </section>
