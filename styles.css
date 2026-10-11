@@ -136,7 +136,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .kicker {
   font-family: var(--font-mono);
   font-weight: var(--font-weight-bold);
-  font-size: .75rem;
+  font-size: .8rem;
   letter-spacing: .16em;
   text-transform: uppercase;
   margin: 0 0 1.15rem;
@@ -161,7 +161,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .meta {
   font-family: var(--font-mono);
-  font-size: .75rem;
+  font-size: .8rem;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--fg-soft);
@@ -217,7 +217,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Das Logo liegt in zwei Farbvarianten vor: logo-white.svg auf dunklem Grund
    (Kopfzeile, Hero), logo-black.svg auf hellem Grund (Fußzeile). */
 .brand { display: block; line-height: 0; }
-.brand img { width: 4rem; height: auto; }
+.brand img { width: 4.6rem; height: auto; }
 
 .nav ul {
   display: flex;
@@ -228,7 +228,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav a {
   font-family: var(--font-mono);
   font-weight: var(--font-weight-bold);
-  font-size: .75rem;
+  font-size: .8rem;
   letter-spacing: .1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -248,7 +248,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: .5rem 0;
   color: var(--paper);
   font-family: var(--font-mono);
-  font-size: .75rem;
+  font-size: .8rem;
   letter-spacing: .1em;
   text-transform: uppercase;
   cursor: pointer;
@@ -496,7 +496,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-footer__nav {
   font-family: var(--font-mono);
   font-weight: var(--font-weight-bold);
-  font-size: .75rem;
+  font-size: .8rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ink-soft);
